@@ -6,13 +6,13 @@ def run_timing() -> str:
     total, count = 0, 0
 
     while kilometers := input("Enter 10 km run time: "):
-        if kilometers.isdigit():
-            total += int(kilometers)
+        if kilometers != '':
+            total += float(kilometers)
             count += 1
-        elif kilometers == '':
+        else:
             break
             
-    return f'Average of {total / count}, over {count} runs'
+    return f'Average of {round((total / count), 2)}, over {count} runs'
 
 
 print(run_timing())
